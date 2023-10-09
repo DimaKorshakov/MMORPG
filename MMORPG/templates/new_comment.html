@@ -1,0 +1,17 @@
+{% include 'default.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="text-center">
+        <h4>{{ post.id }}</h4>
+        <h1>Напишите комментарий</h1>
+        <form action="{% url 'new_comment' post.pk %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Добавить комментарий">
+        </form>
+    </div>
+{% if not request.user.is_authenticated %}
+    <h4 class="text-center">Если вы хотите оставить сообщение, войдите в систему или зарегистрируйтесь.!</h4>
+{% endif %}
+{% endblock %}

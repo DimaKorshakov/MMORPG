@@ -1,0 +1,21 @@
+{% include 'default.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="text-center">
+        <form method="post">
+            <h1>{{title}}</h1>
+            {% csrf_token %}
+            {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+            <button type="submit">Авторизация</button>
+        </form>
+    </div>
+</div>
+</div>
+
+{% endblock %}

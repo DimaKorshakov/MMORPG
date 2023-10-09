@@ -1,0 +1,15 @@
+<ul id="left-chapters">
+    {% if cat_selected == 0 %}
+        <li>Все категории</li>
+    {% else %}
+        <li><a href="/">Все категории</a></li>
+    {% endif %}
+
+    {% for c in cats %}
+	{% if c.pk == cat_selected %}
+		<li>{{c.name}}</li>
+	{% else %}
+		<li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+	{% endif %}
+    {% endfor %}
+</ul>

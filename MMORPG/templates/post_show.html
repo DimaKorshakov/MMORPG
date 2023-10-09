@@ -1,0 +1,11 @@
+{% include 'default.html' %}
+{% block content %}
+<div style="display: flex; margin-top: 5%; left: 50%; position: fixed">
+    <div style="display: block; text-align: center">
+        {{ post.header }}
+        {{ post.text|safe }}
+    </div>
+</div>
+
+
+{% endblock %}

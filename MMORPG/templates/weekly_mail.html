@@ -1,0 +1,15 @@
+{% include 'default.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="text-center">
+        <h1>{{hello_text}}</h1>
+        <p>{{ User }} [{{ Post.creation_date_time| date:'d-M-Y g:i' }}]
+            <a href="{{site_link}}{% url 'post' Post.id %}">{{ Post.header }}</a>
+        </p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% include 'default.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            {{ comment.post.id }}
+            {{ comment.body }}
+            {{ comment.email }}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Сохранить" class="id_status" checked="">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
